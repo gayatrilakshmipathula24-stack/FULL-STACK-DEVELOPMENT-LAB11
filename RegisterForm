@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial;
+        }
+
+        h1 {
+            color: darkblue;
+            text-align: center;
+        }
+
+        table {
+            background-color: white;
+            border: 3px solid darkblue;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid gray;
+            padding: 10px;
+        }
+
+        td:first-child {
+            background-color: lightgreen;
+            color: darkgreen;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            padding: 5px;
+            border: 1px solid blue;
+        }
+
+        input[type="submit"] {
+            background-color: green;
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="reset"] {
+            background-color: red;
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: darkgreen;
+        }
+
+        input[type="reset"]:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>REGISTRATION FORM</h1>
+
+    <form>
+
+        <table align="center">
+
+            <!-- Text Field -->
+            <tr>
+                <td>Full Name</td>
+                <td>
+                    <input type="text" name="fullname">
+                </td>
+            </tr>
+
+            <!-- Password Field -->
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="password" name="password">
+                </td>
+            </tr>
+
+            <!-- Number Field -->
+            <tr>
+                <td>Age</td>
+                <td>
+                    <input type="number" name="age">
+                </td>
+            </tr>
+
+            <!-- Date of Birth -->
+            <tr>
+                <td>Date of Birth</td>
+                <td>
+                    <input type="date" name="dob">
+                </td>
+            </tr>
+
+            <!-- Radio Buttons -->
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" name="gender" value="male">
+                    Male
+
+                    <input type="radio" name="gender" value="female">
+                    Female
+
+                    <input type="radio" name="gender" value="other">
+                    Other
+                </td>
+            </tr>
+
+            <!-- Checkboxes -->
+            <tr>
+                <td>Courses</td>
+                <td>
+                    <input type="checkbox" name="course" value="java">
+                    Java
+
+                    <input type="checkbox" name="course" value="python">
+                    Python
+
+                    <input type="checkbox" name="course" value="html">
+                    HTML
+
+                    <input type="checkbox" name="course" value="css">
+                    CSS
+                </td>
+            </tr>
+
+            <!-- Select and Option -->
+            <tr>
+                <td>State</td>
+                <td>
+                    <select name="state">
+                        <option>Andhra Pradesh</option>
+                        <option>Telangana</option>
+                        <option>Karnataka</option>
+                        <option>Tamil Nadu</option>
+                        <option>Kerala</option>
+                    </select>
+                </td>
+            </tr>
+
+            <!-- Text Area -->
+            <tr>
+                <td>Address</td>
+                <td>
+                    <textarea name="address" rows="4" cols="30"></textarea>
+                </td>
+            </tr>
+
+            <!-- Buttons -->
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+
+</body>
+</html>
