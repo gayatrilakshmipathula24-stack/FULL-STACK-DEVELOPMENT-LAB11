@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fruits and Vegetables Information</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(to right,#b8f2b3,#f8ffd8);
+    padding:30px;
+}
+
+h1{
+    text-align:center;
+    color:darkgreen;
+    margin-bottom:25px;
+}
+
+.container{
+    display:flex;
+    justify-content:space-around;
+    flex-wrap:wrap;
+}
+
+.box{
+    width:40%;
+    min-width:300px;
+    background:white;
+    border-radius:10px;
+    padding:20px;
+    margin:15px;
+    box-shadow:0 0 10px gray;
+}
+
+h2{
+    text-align:center;
+    color:green;
+    margin-bottom:15px;
+}
+
+ul{
+    list-style:none;
+}
+
+li{
+    background:#e8ffe8;
+    margin:10px 0;
+    padding:12px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+    font-size:18px;
+}
+
+li:hover{
+    background:green;
+    color:white;
+    transform:scale(1.05);
+}
+
+#infoBox{
+    margin:30px auto;
+    max-width:900px;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 0 15px gray;
+}
+
+#title{
+    color:darkred;
+    margin-bottom:15px;
+}
+
+img{
+    width:220px;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+p{
+    margin:8px 0;
+    line-height:1.6;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🍎 Fruits and 🥕 Vegetables Information</h1>
+
+<div class="container">
+
+<div class="box">
+<h2>🥕 Vegetables</h2>
+<ul>
+<li onclick="showInfo('Carrot')">🥕 Carrot</li>
+<li onclick="showInfo('Potato')">🥔 Potato</li>
+<li onclick="showInfo('Tomato')">🍅 Tomato</li>
+<li onclick="showInfo('Brinjal')">🍆 Brinjal</li>
+<li onclick="showInfo('Cabbage')">🥬 Cabbage</li>
+</ul>
+</div>
+
+<div class="box">
+<h2>🍓 Fruits</h2>
+<ul>
+<li onclick="showInfo('Apple')">🍎 Apple</li>
+<li onclick="showInfo('Banana')">🍌 Banana</li>
+<li onclick="showInfo('Mango')">🥭 Mango</li>
+<li onclick="showInfo('Orange')">🍊 Orange</li>
+<li onclick="showInfo('Grapes')">🍇 Grapes</li>
+</ul>
+</div>
+
+</div>
+
+<div id="infoBox">
+<h2 id="title">Click any fruit or vegetable</h2>
+<img id="image" src="https://via.placeholder.com/220x180?text=Food" alt="">
+<p id="description">Its information will appear here.</p>
+</div>
+
+<script>
+
+const foods={
+
+Carrot:{
+image:"https://upload.wikimedia.org/wikipedia/commons/7/70/Carrot.jpg",
+text:`
+<b>Scientific Name:</b> Daucus carota<br><br>
+<b>Colour:</b> Orange<br>
+<b>Rich In:</b> Vitamin A, Vitamin K, Fibre<br>
+<b>Benefits:</b>
+<ul>
+<li>Improves eyesight</li>
+<li>Boosts immunity</li>
+<li>Healthy skin</li>
+<li>Good for heart health</li>
+</ul>
+<b>Uses:</b> Salads, soups, juice, curry.
+`
+},
+
+Potato:{
+image:"https://upload.wikimedia.org/wikipedia/commons/a/ab/Patates.jpg",
+text:`
+<b>Scientific Name:</b> Solanum tuberosum<br><br>
+<b>Rich In:</b> Carbohydrates, Potassium, Vitamin C<br>
+<b>Benefits:</b>
+<ul>
+<li>Provides energy</li>
+<li>Supports muscles</li>
+<li>Good source of fibre</li>
+</ul>
+<b>Uses:</b> Chips, fries, curry, mashed potatoes.
+`
+},
+
+Tomato:{
+image:"https://upload.wikimedia.org/wikipedia/commons/8/89/Tomato_je.jpg",
+text:`
+<b>Scientific Name:</b> Solanum lycopersicum<br><br>
+<b>Rich In:</b> Vitamin C and Lycopene<br>
+<b>Benefits:</b>
+<ul>
+<li>Good for heart</li>
+<li>Healthy skin</li>
+<li>Powerful antioxidant</li>
+</ul>
+<b>Uses:</b> Salad, ketchup, soup, curry.
+`
+},
+
+Brinjal:{
+image:"https://upload.wikimedia.org/wikipedia/commons/f/fb/Aubergine.jpg",
+text:`
+<b>Scientific Name:</b> Solanum melongena<br><br>
+<b>Rich In:</b> Fibre, Potassium<br>
+<b>Benefits:</b>
+<ul>
+<li>Improves digestion</li>
+<li>Low in calories</li>
+<li>Supports heart health</li>
+</ul>
+<b>Uses:</b> Curry, fry, grilled dishes.
+`
+},
+
+Cabbage:{
+image:"https://upload.wikimedia.org/wikipedia/commons/6/6f/Cabbage_and_cross_section_on_white.jpg",
+text:`
+<b>Scientific Name:</b> Brassica oleracea<br><br>
+<b>Rich In:</b> Vitamin C, Vitamin K<br>
+<b>Benefits:</b>
+<ul>
+<li>Strengthens immunity</li>
+<li>Improves digestion</li>
+<li>Healthy bones</li>
+</ul>
+<b>Uses:</b> Salads, curry, soup.
+`
+},
+
+Apple:{
+image:"https://upload.wikimedia.org/wikipedia/commons/1/15/Red_Apple.jpg",
+text:`
+<b>Scientific Name:</b> Malus domestica<br><br>
+<b>Rich In:</b> Fibre, Vitamin C<br>
+<b>Benefits:</b>
+<ul>
+<li>Good for heart</li>
+<li>Improves digestion</li>
+<li>Supports weight management</li>
+</ul>
+<b>Uses:</b> Juice, pie, salads, snacks.
+`
+},
+
+Banana:{
+image:"https://upload.wikimedia.org/wikipedia/commons/8/8a/Banana-Single.jpg",
+text:`
+<b>Scientific Name:</b> Musa<br><br>
+<b>Rich In:</b> Potassium, Vitamin B6<br>
+<b>Benefits:</b>
+<ul>
+<li>Provides instant energy</li>
+<li>Good for muscles</li>
+<li>Supports digestion</li>
+</ul>
+<b>Uses:</b> Smoothies, desserts, snacks.
+`
+},
+
+Mango:{
+image:"https://upload.wikimedia.org/wikipedia/commons/9/90/Hapus_Mango.jpg",
+text:`
+<b>Scientific Name:</b> Mangifera indica<br><br>
+<b>Rich In:</b> Vitamin A and C<br>
+<b>Benefits:</b>
+<ul>
+<li>Boosts immunity</li>
+<li>Healthy skin</li>
+<li>Improves eyesight</li>
+</ul>
+<b>Uses:</b> Juice, ice cream, pickles.
+`
+},
+
+Orange:{
+image:"https://upload.wikimedia.org/wikipedia/commons/c/c4/Orange-Fruit-Pieces.jpg",
+text:`
+<b>Scientific Name:</b> Citrus sinensis<br><br>
+<b>Rich In:</b> Vitamin C<br>
+<b>Benefits:</b>
+<ul>
+<li>Boosts immunity</li>
+<li>Healthy skin</li>
+<li>Powerful antioxidant</li>
+</ul>
+<b>Uses:</b> Juice, desserts, fruit salads.
+`
+},
+
+Grapes:{
+image:"https://upload.wikimedia.org/wikipedia/commons/b/bb/Table_grapes_on_white.jpg",
+text:`
+<b>Scientific Name:</b> Vitis vinifera<br><br>
+<b>Rich In:</b> Vitamin K, Vitamin C<br>
+<b>Benefits:</b>
+<ul>
+<li>Good for heart</li>
+<li>Supports brain health</li>
+<li>Rich in antioxidants</li>
+</ul>
+<b>Uses:</b> Juice, raisins, desserts.
+`
+}
+
+};
+
+function showInfo(food){
+document.getElementById("title").innerHTML=food;
+document.getElementById("description").innerHTML=foods[food].text;
+document.getElementById("image").src=foods[food].image;
+}
+
+</script>
+
+</body>
+</html>
